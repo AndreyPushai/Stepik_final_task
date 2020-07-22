@@ -1,4 +1,5 @@
 import pytest
+#import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -32,5 +33,6 @@ def browser(request):
         raise pytest.UsageError(f"--browser_name is invalid, supported browsers: chrome, firefox")
 
     yield browser
+    #time.sleep(3)
     print("\n Quiting browser...")
     browser.quit()
