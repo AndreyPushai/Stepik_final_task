@@ -38,6 +38,4 @@ class ProductPage(BasePage):
         book_price = self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
         book_price_in_message = self.browser.find_element(*ProductPageLocators.BOOK_PRICE_IN_MESSAGE).text
 
-        print("Book price: %s" % book_price, "Message price: %s" % book_price_in_message)
-
         assert book_price == book_price_in_message, "Book price doesn't match book price in message"
