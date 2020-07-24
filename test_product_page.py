@@ -22,3 +22,26 @@ def test_guest_can_add_product_to_basket(browser, link):
     time.sleep(5)
     page.book_added_to_basket_message_appeared()
     page.basket_cost_message_appeared()
+
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser, link):
+    
+    page = ProductPage(browser, link) 
+    page.open()
+    page.add_book_to_basket() 
+    # Проверяем, что нет сообщения об успехе с помощью is_not_element_present
+    pass
+
+def test_guest_cant_see_success_message(browser, link):
+
+    page = ProductPage(browser, link)
+    page.open() 
+    # Проверяем, что нет сообщения об успехе с помощью is_not_element_present
+    pass
+
+def test_message_disappeared_after_adding_product_to_basket(browser, link):
+    
+    page = ProductPage(browser, link)
+    page.open()
+    page.add_book_to_basket()
+    # Проверяем, что нет сообщения об успехе с помощью is_disappeared
+    pass
