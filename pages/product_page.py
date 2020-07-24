@@ -2,6 +2,9 @@ import math
 from .base_page import BasePage
 from .locators import ProductPageLocators
 from selenium.common.exceptions import NoAlertPresentException
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
 
 class ProductPage(BasePage):
     def add_book_to_basket(self):
@@ -15,11 +18,12 @@ class ProductPage(BasePage):
         alert.send_keys(answer)
         alert.accept()
         try:
+            WebDriverWait(self.browser, 1).until(expected_conditions.alert_is_present())
             alert = self.browser.switch_to.alert
             alert_text = alert.text
             print(f"Your code: {alert_text}")
             alert.accept()
-        except NoAlertPresentException:
+        except (NoAlertPresentException, TimeoutException):
             print("No second alert presented")
 
     def book_added_to_basket_message_appeared(self):
