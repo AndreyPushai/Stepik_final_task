@@ -23,6 +23,7 @@ def browser(request):
         options = ChromeOptions()
         options.add_experimental_option('prefs', {'intl.accept_languages': language})
         # options.add_argument("--headless")
+        # options.add_argument("--start-maximized")
         browser = webdriver.Chrome(options=options)
 
     elif browser_name == 'firefox':
