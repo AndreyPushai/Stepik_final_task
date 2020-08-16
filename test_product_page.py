@@ -44,9 +44,6 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page.open()
     page.add_book_to_basket()
     page.success_message_not_present()
-    # Проверяем, что нет сообщения об успехе с помощью is_not_element_present
-
-
 
 @pytest.mark.lesson_4_3_6
 def test_message_disappeared_after_adding_product_to_basket(browser):
@@ -55,7 +52,6 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     page.open()
     page.add_book_to_basket()
     page.success_message_disappeared()
-    # Проверяем, что нет сообщения об успехе с помощью is_disappeared
 
 @pytest.mark.lesson_4_3_8
 def test_guest_should_see_login_link_on_product_page(browser):
