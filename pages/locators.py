@@ -28,3 +28,7 @@ class BasePageLocators():
 class BasketPageLocators():
     BASKET_EMPTY_TEXT = (By.CSS_SELECTOR, "#content_inner > p")
     BASKET_FORMSET = (By.CSS_SELECTOR, "#basket_formset")
+
+class DeleteProfilePageLocators():
+        PASSWORD_INPUT = (By.CSS_SELECTOR, "input[name='password']")
+        DELETE_BUTTON =  (By.CSS_SELECTOR, "button.btn-danger[type='submit']")
